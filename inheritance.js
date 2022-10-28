@@ -35,5 +35,15 @@ var Teacher = function(name, age, job, subject){
     this.subject = subject
 }
 
-var SheikhMujib = new Teacher('Sheikh Mujib', 'Gone', 'Teacher', 'War')
+var SheikhMujib = new Teacher('Sheikh Mujib', 102, 'Teacher', 'War')
 console.log(SheikhMujib)
+
+// using prototype in constructor inheritance
+Teacher.prototype.dobs = function(currentYears){
+    console.log(this.name + ' was born in ' + (currentYears - this.age))
+}
+
+SheikhMujib.dobs(2022)
+
+
+
