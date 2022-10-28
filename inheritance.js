@@ -1,13 +1,12 @@
 // Two of inherite have
-// ==one== Prototype inheritance
-// ==two== Constructor Inheritance
-
+        // ==one== Prototype inheritance
+        // ==two== Constructor Inheritance
 
 // function inheritance in prototype based
 var Person = function(name, age, job){
     this.name = name;
     this.age = age;
-    thsi.job = job
+    this.job = job
 }
 
 Person.prototype.dob=function(currentYear){
@@ -19,5 +18,22 @@ console.log(abir)
 abir.dob(2022)
 
 Person.prototype.address = 'Bangladesh';
-console.log(abir.address)
+console.log(abir.name+ ' lives in ' + abir.address)
 // for better experience run this last console on your browser console...
+
+
+
+// Function inheritance in constructor based
+var Respect = function(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+}
+
+var Teacher = function(name, age, job, subject){
+    Respect.call(this, name, age, job)
+    this.subject = subject
+}
+
+var SheikhMujib = new Teacher('Sheikh Mujib', 'Gone', 'Teacher', 'War')
+console.log(SheikhMujib)
